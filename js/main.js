@@ -8,7 +8,7 @@ function makeRequest() {
 
     $.ajax({
         type: "POST",
-        url: "http://192.168.62.11/series/api/validate/",
+        url: "http://apis.datos.gob.ar/series/api/validate/",
         dataType: "json",
         headers: {
             "Content-Type": "application/json"
