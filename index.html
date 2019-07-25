@@ -3,19 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
 </head>
 <body>
 
 	<h1>Validación de distribuciones de series de tiempo</h1>
 
-	<form action="/" method="post">
+	<form action="" method="post">
 
-        URL del catálogo: <input type="text" name="url"><br>
-        Formato: <input type="text" name="format" value="JSON"><br>
-        Identificador de distribución: <input type="text" name="identifier"><br>
-
-        <input type="submit" value="Validar">
+        URL del catálogo: <input type="text" name="catalog_url"><br>
+        Formato: <input type="text" name="format" value="json"><br>
+        Identificador de distribución: <input type="text" name="distribution_id"><br>
 		
 	</form>
+
+    <button onclick="makeRequest()">Validar</button>
+
+    <div class="errors-container">
+    </div>
+
 </body>
 </html>
