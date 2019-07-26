@@ -1,7 +1,7 @@
 function makeRequest() {
     const catalog_url = $("input[name=catalog_url]").val();
     const distribution_id = $("input[name=distribution_id]").val().toString();
-    const format = $("input[name=format]").val() || "json";
+    const format = $("select.format").children("option:selected").val();
     
     const $errorsContainer = $(".errors-container");
     $errorsContainer.empty();
