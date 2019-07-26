@@ -4,24 +4,69 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./css/icono-arg.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/poncho.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css"/>
+
     <script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
 </head>
 <body>
 
-	<h1>Validación de distribuciones de series de tiempo</h1>
+    <header>
+        <nav class="navbar navbar-top navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#" aria-label="Argentina.gob.ar Presidencia de la Nación">
+                        <img alt="Argentina.gob.ar" src="./img/argentinagob.svg" height="50">
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-	<form action="" method="post">
+    <div class="container">
 
-        URL del catálogo: <input type="text" name="catalog_url"><br>
-        Formato: <input type="text" name="format" value="json"><br>
-        Identificador de distribución: <input type="text" name="distribution_id"><br>
-		
-	</form>
+        <div class="index-header">
+            <h3 id="validation-header">Validación de distribuciones de series de tiempo</h3>
+        </div>
 
-    <button onclick="makeRequest()">Validar</button>
+        <form action="" method="post">
 
-    <div class="errors-container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 form-group item-form">
+                    <label for="catalog_url">URL del catálogo</label>
+                    <input type="text" class="form-control" name="catalog_url" required aria-required="true">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 form-group item-form">
+                    <label for="format">Formato</label>
+                    <input type="text" class="form-control" name="format" aria-required="false" value="json">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 form-group item-form">
+                    <label for="distribution_id">Identificador de distribución</label>
+                    <input type="text" class="form-control" name="distribution_id" required aria-required="true">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <input value="Validar" type="button" class="btn btn-primary" onclick="makeRequest()">
+                </div>
+            </div>
+            
+        </form>
+
+        <div class="col-md-8 col-md-offset-2 errors-container">
+        </div>
+
     </div>
 
 </body>

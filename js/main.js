@@ -4,6 +4,7 @@ function makeRequest() {
     const format = $("input[name=format]").val() || "json";
     
     const $errorsContainer = $(".errors-container");
+    $errorsContainer.empty();
     $errorsContainer.append("<h4>Validando catálogo...</h4>");
 
     $.ajax({
@@ -20,15 +21,15 @@ function makeRequest() {
         }),
         success: function(data){
             const issuesCount = data.found_issues;
-            $errorsContainer.empty()
+            $errorsContainer.empty();
+            $errorsContainer.append("<h4>Resultados de la validación:</h4>");
             if (issuesCount < 1) {
-                $errorsContainer.append("<h4>El catálogo subido no tiene errores</h4>");
+                $errorsContainer.append("<div class='alert alert-success'><p>El catálogo cargado no tiene errores<p></div>");
             }
             else {
                 issuesDetails = data.detail;
-                $errorsContainer.append("<h4>Se encontraron los siguientes errores de validación:</h4>");
                 issuesDetails.forEach(issue => {
-                    $errorsContainer.append(`<p>${issue}<p>`);
+                    $errorsContainer.append(`<div class="alert alert-danger"><p>${issue}<p></div>`);
                 });
             }
         },
