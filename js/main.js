@@ -24,7 +24,7 @@ function makeRequest() {
             $errorsContainer.empty();
             $errorsContainer.append("<h4>Resultados de la validación:</h4>");
             if (issuesCount < 1) {
-                $errorsContainer.append("<div class='alert alert-success'><p>El catálogo cargado no tiene errores<p></div>");
+                $errorsContainer.append("<div class='alert alert-success'><p>La distribución cargada no tiene errores<p></div>");
             }
             else {
                 issuesDetails = data.detail;
